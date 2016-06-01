@@ -18,37 +18,43 @@
   Target Demographic  - (initial) 21+ crowd that wants to organize bar crawl with friends.
                       - (initial) The family that wants to create a fun outing exploring landmarks, parks, and places of interest within a city.
                       - (future)  Organized groups like the AlleyCats that hold competitive events around the city.
+
 ## What outputs do they need?
-  OAuth - IF user (validate on backend), send to 'make a Scavenger Hunt' screen,
-          ELSE make user resubmit or sign up.
+  (a) OAuth - IF user (validate on backend), send to 'make a Scavenger Hunt' screen,
+              ELSE make user resubmit or sign up.
 
-  When 'check in' button clicked  - IF at right location, turn clue a different color and send to bottom of que,
-                                    ELSE generate a 'not quite' message and return to the scavenger hunt page.
-  Once Scavenger Hun-
+  (b) Invite generated via email / text
 
+  (c) Upon receiving SH invitation  - IF accept, send to OAuth?
+                                      ELSE, generate 'maybe next time' message
 
+  Once Scavenger Hunt becomes accessible:
+      - Interactive drop-down menu for each clue/riddle generates, utilizing inputs from (b)
+          - (d) onClick 'I think I'm here' button  -  IF at right location  - turn clue a different color,
+                                                                        - send clue to bottom of que,
+                                                                        - update team score (see scoring section)
+                                                  ELSE - generate a 'not quite' message,
+                                                       - return to the scavenger hunt page
 
-
+  Once all clues/riddles solved, final destination unlocked.
 
 ## What inputs are needed to generate those outputs?
-  OAuth
+  (a) OAuth
 
-  'Check in' button
+  (b) Form  - Name your Scavenger Hunt
+            - Date | Time | Location that Scavenger Hunt commences
+            - Addresses of locations for Scavenger Hunt (tied to geofencing)
+            - Clues/riddles to locations
+            - Invite friends (via email / text)
+            - Specify Team Captains
 
-  Form  - Name your Scavenger Hunt
-        - Date | Time | Location that Scavenger Hunt commences
-        - Addresses of locations for Scavenger Hunt (tied to geofencing)
-        - Clues/riddles to locations
-        - Invite friends
-        - Specify Team Captains
+  (c) Accept or reject invitation
 
+  (d) 'I think I'm here' button
 
-
-
-
-
-
-
+  ** POINT SYSTEM: - max points given for each location (set by organizer)
+                   - deduct points for using optional (additional) hints accessible during SH (set by organizer)
+                   - when 'I think I'm here' successful, recalibrate score
 
 ## What technologies will you use that weren't covered in class?
   Geofencing (w/ geolocation radius)
@@ -62,7 +68,7 @@
   Several APIs
   FB OAuth
 
-## Feature list
+## Feature list (Nice-to-haves)
   Instagram tagging (API, geolocation)
   Partnering with businesses and retailers for cross promotion (possibly Groupon API)(potentially a great way to partner with locally owned businesses)
   Splitwise
@@ -73,4 +79,9 @@
   Display page generated upon completion of scavenger hunt
   Auth for initial user VS team captain VS teammate
   Upon submission addresses of locations, auto-generate dropped pins via Mapbox on 'create a SH' page to help organizing user visualize scope of hunt
-  Organizer has option to 'Start' Scavenger Hunt at will OR SH becomes accessible on Team Captain's Phone at pre disclosed Date and Time
+  Organizer has option to 'Start' Scavenger Hunt at will OR SH becomes accessible on Team Captain's phones at pre disclosed Date and Time
+  Countdown feature
+  See past scavenger hunts
+  Points of interest / trivia about a novelty product found at, or history of, location
+  Team delegation more customizable
+  Toggle between map and clues during SH
